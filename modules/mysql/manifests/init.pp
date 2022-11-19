@@ -1,5 +1,5 @@
 class mysql {
-  package { 'mysql-server':
+  package { $mysqllibs:
     ensure => installed,
   }
 }

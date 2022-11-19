@@ -1,5 +1,4 @@
 class apache {
-  $apachelibs = ['apache2', 'libapache2-mod-php']
   package { $apachelibs:
     ensure => installed,
   }

@@ -1,5 +1,5 @@
 class ghostscript {
-  package { 'ghostscript':
+  package { $ghostscriptlibs:
     ensure => installed,
   }
 }

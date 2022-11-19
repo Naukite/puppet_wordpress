@@ -1,7 +1,4 @@
-class php {
-  $phplibs = ['php', 'php-bcmath', 'php-curl',  'php-imagick', 'php-intl', 'php-json', 
-              'php-mbstring', 'php-mysql', 'php-xml', 'php-zip']
-              
+class php {              
   package { $phplibs:
     ensure => installed,
   }
