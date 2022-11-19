@@ -1,13 +1,10 @@
-$document_root = '/vagrant'
+include updater
 include apache
+include php
+include mysql
+include ghostscript
 
-exec { 'Skip Message':
-  command => "echo ‘Este mensaje sólo se muestra si no se ha copiado el fichero index.html'",
-  unless => "test -f ${document_root}/index.html",
-  path => "/bin:/sbin:/usr/bin:/usr/sbin",
-}
-
-notify { 'Showing machine Facts':
+notify { '[Box says] I will tell you something about me: ':
   message => "Machine with ${::memory['system']['total']} of memory and $::processorcount processor/s.
               Please check access to http://$::ipaddress_enp0s8}",
 }
