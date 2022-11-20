@@ -1,1 +1,0 @@
-INSERT INTO wp_posts(ID, post_status, post_author, post_title, post_content, post_excerpt, to_ping, pinged, post_content_filtered) VALUES (12, 'publish', 1, 'ARTIFICIAL POST CREATED BY NAU', 'THIS IS THE CONTENT', '', '', '', '');

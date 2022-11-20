@@ -42,5 +42,17 @@ class wordpress {
     group => 'www-data',    
     require => Exec['create_db_wordpress']
   }  
+
+  file { '/vagrant/script.sql':
+    content => template('wordpress/script.sql.erb'),  
+    require => Exec['create_db_wordpress']
+  }    
+
+  exec{'config_final_wordpress':
+    command => "/usr/bin/sudo /usr/bin/mysql -h localhost wordpress < /vagrant/script.sql",
+    require => File['/vagrant/script.sql'],
+    timeout => 0,
+    logoutput => true
+  }    
 }
 
