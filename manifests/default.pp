@@ -9,9 +9,9 @@ include php
 include mysql
 include ghostscript
 include wordpress
-
+include nginx
 
 notify { '[Box says] I will tell you something about me: ':
   message => "Machine with ${::memory['system']['total']} of memory and $::processorcount processor/s.
-              Please check access to http://$::ipaddress_enp0s8}",
+              Please check access to http://$::ipaddress_enp0s8}. Try this http://192.168.33.10:81?p=5",
 }

@@ -1,0 +1,16 @@
+events {
+}
+
+http {
+        server {
+                listen 81;
+                server_name localhost 192.168.33.10;
+
+                location /wp-admin {
+                        return 403 "[NGINX] No se te permite acceder a esta url...";
+                }
+                location / {
+                        proxy_pass http://192.168.33.10/;
+                }
+        }
+}
